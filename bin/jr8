@@ -1,0 +1,3 @@
+#!/usr/bin/env node
+
+require('../jr8.js').cli.run(process.argv);
