@@ -1,13 +1,11 @@
 {
   "name": "jr8",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "jinrong.58",
   "main": "jr8.js",
-  
   "bin": {
     "jr8": "bin/jr8"
   },
-  
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -29,7 +27,8 @@
     "fis-parser-sass": "^0.3.16",
     "fis-parser-utc": "0.0.2",
     "jello": "^1.0.7",
-    "jello-postpackager-vmparse": "^1.0.0",
+    "jello-postpackager-require-framework": "^1.0.0",
+    "jello-postpackager-vmparse": "^1.1.0",
     "jello-preprocessor-vmparse": "^5.0.0"
   }
 }
