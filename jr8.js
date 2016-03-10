@@ -10,11 +10,23 @@ fis.cli.info = fis.util.readJSON(__dirname + '/package.json');
 
 
 
-var IS_PUBLISH     = /\bpublish\b/i.test(process.title);
-var IS_PERFORMANCE = /\bperformance\b/i.test(process.title);
 
-console.log('IS_PUBLISH    :' + IS_PUBLISH);
-console.log('IS_PERFORMANCE:' + IS_PERFORMANCE);
+
+
+// --------------------------------
+// ¥Ú”°–≈œ¢
+// --------------------------------
+if (/\brelease\b/i.test(process.title)) {
+
+	var IS_PUBLISH     = /\bpublish\b/i.test(process.title);
+	var IS_PERFORMANCE = /\bperformance\b/i.test(process.title);
+
+	console.log('IS_PUBLISH    :' + IS_PUBLISH);
+	console.log('IS_PERFORMANCE:' + IS_PERFORMANCE);
+}
+
+
+
 
 
 
