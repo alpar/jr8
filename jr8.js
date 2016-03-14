@@ -14,7 +14,7 @@ fis.cli.info = fis.util.readJSON(__dirname + '/package.json');
 
 
 // --------------------------------
-// ´òÓ¡ĞÅÏ¢
+// æ‰“å°ä¿¡æ¯
 // --------------------------------
 if (/\brelease\b/i.test(process.title)) {
 
@@ -35,17 +35,17 @@ if (/\brelease\b/i.test(process.title)) {
 
 
 // --------------------------------
-// Ñ¹ËõÓÅ»¯
+// å‹ç¼©ä¼˜åŒ–
 // --------------------------------
 fis.config.merge({
     modules: {
         optimizer: {
-            // jsºó×ºÎÄ¼ş»á¾­¹ıfis-optimizer-uglify-js²å¼şµÄÑ¹ËõÓÅ»¯
+            // jsåç¼€æ–‡ä»¶ä¼šç»è¿‡fis-optimizer-uglify-jsæ’ä»¶çš„å‹ç¼©ä¼˜åŒ–
             js: 'uglify-js',
             css: 'clean-css' //, png : 'png-compressor'
         }
     },
-    // Ê¹ÓÃpngquant½øĞĞÑ¹Ëõ£¬pngÍ¼Æ¬Ñ¹Ëõºó¾ùÎªpng8
+    // ä½¿ç”¨pngquantè¿›è¡Œå‹ç¼©ï¼Œpngå›¾ç‰‡å‹ç¼©åå‡ä¸ºpng8
     // fis.config.set('settings.optimizer.png-compressor.type', 'pngquant');
     settings: {
         optimizer: {
@@ -65,7 +65,7 @@ fis.config.merge({
 
 
 // --------------------------------
-// js Ä£°åÖ§³Ö
+// js æ¨¡æ¿æ”¯æŒ
 // --------------------------------
 fis.config.set('modules.parser.tmpl', 'utc');
 //fis.config.set('roadmap.ext.tmpl', 'js');
@@ -89,7 +89,7 @@ fis.config.set('modules.parser.tmpl', 'utc');
 
 
 // --------------------------------
-// postpackager²å¼ş
+// postpackageræ’ä»¶
 // --------------------------------
 
 var ppArr = fis.config.get('modules.postpackager') || [];
@@ -98,7 +98,7 @@ var ppArr = fis.config.get('modules.postpackager') || [];
 /\bpublish\b/i.test(process.title) && ppArr.push('vmparse');
 /\bperformance\b/i.test(process.title) && ppArr.push('performance-framework');
 
-// performance-framework Ò»¶¨ÒªÔÚ require-framework Ö®Ç°£¬ÒòÎª¶şÕß¶¼ÓÃµ½ÁËvm¹³×Ó
+// performance-framework ä¸€å®šè¦åœ¨ require-framework ä¹‹å‰ï¼Œå› ä¸ºäºŒè€…éƒ½ç”¨åˆ°äº†vmé’©å­
 ppArr.push('require-framework');
 
 
