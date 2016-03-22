@@ -28,7 +28,7 @@
     "fis-parser-utc": "0.0.2",
     "jello": "^1.0.7",
     "jello-postpackager-performance-framework": "^2.1.0",
-    "jello-postpackager-require-framework": "^1.0.0",
+    "jello-postpackager-require-framework": "^2.0.0",
     "jello-postpackager-vmparse": "^1.1.0",
     "jello-preprocessor-vmparse": "^5.0.0"
   }
