@@ -4,8 +4,24 @@ fis.require.prefixes.unshift('jello');
 
 fis.cli.name = 'jr8';
 fis.cli.info = fis.util.readJSON(__dirname + '/package.json');
-
-
+fis.cli.version = function(){
+    var content = [
+        '',
+        '  fis: v' + fis.cli.info.version,
+        '',
+        ' ________'                    + '|||'.bold.red + '____' + '|||||||||\\'.bold.yellow                                + '___________' + '||||||||||'.bold.green        + '____' + '||||||||||'.bold.blue,
+        ' ________'                    + '|||'.bold.red + '____' + '|||'.bold.yellow + '______' + '||'.bold.yellow          + '__________' + '|||'.bold.green         + '___________' + '|||'.bold.blue + '____' + '|||'.bold.blue,
+        ' ________'                    + '|||'.bold.red + '____' + '|||'.bold.yellow + '______' + '||'.bold.yellow          + '__________' + '|||'.bold.green         + '___________' + '|||'.bold.blue + '____' + '|||'.bold.blue,
+        ' ________'                    + '|||'.bold.red + '____' + '|||'.bold.yellow + '______' + '||'.bold.yellow          + '__________' + '|||'.bold.green         + '___________' + '|||'.bold.blue + '____' + '|||'.bold.blue,
+        ' ________'                    + '|||'.bold.red + '____' + '|||||||||/'.bold.yellow                                 + '___________' + '||||||||||'.bold.green        + '____' + '||||||||||'.bold.blue,
+        ' ________'                    + '|||'.bold.red + '____' + '|||'.bold.yellow + ''      + '\\\\\\'.bold.yellow       + '______________________' + '|||'.bold.green    + '____' + '|||'.bold.blue + '____' + '|||'.bold.blue,
+        ' ________'                    + '|||'.bold.red + '____' + '|||'.bold.yellow + '__'     + '\\\\\\'.bold.yellow      + '____________________' + '|||'.bold.green      + '____' + '|||'.bold.blue + '____' + '|||'.bold.blue,
+        ' ' + '|||'.bold.red + '_____' + '|||'.bold.red + '____' + '|||'.bold.yellow + '____'    + '\\\\\\'.bold.yellow     + '__________________' + '|||'.bold.green        + '____' + '|||'.bold.blue + '____' + '|||'.bold.blue,
+        ' '                    + '|||||||||||'.bold.red + '____' + '|||'.bold.yellow + '______'   + '\\\\\\'.bold.yellow    + '_________' + '||||||||||'.bold.green          + '____' + '||||||||||'.bold.blue,
+        ''
+    ].join('\n');
+    console.log(content);
+};
 
 
 
@@ -18,11 +34,11 @@ fis.cli.info = fis.util.readJSON(__dirname + '/package.json');
 // --------------------------------
 if (/\brelease\b/i.test(process.title)) {
 
-	var IS_PUBLISH     = /\bpublish\b/i.test(process.title);
-	var IS_PERFORMANCE = /\bperformance\b/i.test(process.title);
+    var IS_PUBLISH     = /\bpublish\b/i.test(process.title);
+    var IS_PERFORMANCE = /\bperformance\b/i.test(process.title);
 
-	console.log('IS_PUBLISH    :' + IS_PUBLISH);
-	console.log('IS_PERFORMANCE:' + IS_PERFORMANCE);
+    console.log('IS_PUBLISH    :' + IS_PUBLISH);
+    console.log('IS_PERFORMANCE:' + IS_PERFORMANCE);
 }
 
 
