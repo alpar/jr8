@@ -1,6 +1,6 @@
 {
   "name": "jr8",
-  "version": "1.7.2",
+  "version": "1.8.0",
   "description": "jinrong.58",
   "main": "jr8.js",
   "bin": {
