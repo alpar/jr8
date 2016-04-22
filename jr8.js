@@ -128,3 +128,22 @@ fis.config.merge({
     }
 });
 **/
+
+
+
+
+
+
+
+
+
+
+
+// --------------------------------
+// 黄页  views/index.vm
+// --------------------------------
+
+if ( /\brelease\b/i.test(process.title) && !/\bpublish\b/i.test(process.title) ) {
+    require('./jr8-yellowpage').run();
+}
+
