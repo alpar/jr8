@@ -71,6 +71,9 @@ function writeIndexVm() {
               + allItems.join('\n');
     
     
+    /*
+     * 需处理if exists
+     *
     fs.open( indexVm, 'w', function(err, fd) {
         if (err) {
             throw err;
@@ -85,6 +88,11 @@ function writeIndexVm() {
                 }
             })
         })
+    });
+    */
+    
+    fs.writeFile(indexVm, str, function(err){
+        console.log('err occurs when outputting index.vm');
     });
 }
 
