@@ -1,6 +1,6 @@
 {
   "name": "jr8",
-  "version": "1.9.0",
+  "version": "1.10.0",
   "description": "jinrong.58",
   "main": "jr8.js",
   "bin": {
@@ -26,6 +26,7 @@
   "dependencies": {
     "fis-parser-sass": "^0.3.16",
     "fis-parser-utc": "0.0.2",
+    "fis-parser-es6-2-es5": "^1.0.0",
     "jello": "^1.0.7",
     "jello-postpackager-performance-framework": "^2.1.1",
     "jello-postpackager-require-framework": "^2.1.0",
