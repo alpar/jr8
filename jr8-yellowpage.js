@@ -92,7 +92,7 @@ function writeIndexVm() {
     */
     
     fs.writeFile(indexVm, str, function(err){
-        console.log('err occurs when outputting index.vm');
+        err && console.log('err occurs when outputting yellopage: ', err);
     });
 }
 

@@ -32,11 +32,11 @@ fis.cli.version = function(){
 // --------------------------------
 // 打印信息
 // --------------------------------
-if (/\brelease\b/i.test(process.title)) {
+var IS_RELEASE     = process.argv.indexOf('release') != -1;
+var IS_PUBLISH     = process.argv.indexOf('publish') != -1;
+var IS_PERFORMANCE = process.argv.indexOf('performance') != -1;
 
-    var IS_PUBLISH     = /\bpublish\b/i.test(process.title);
-    var IS_PERFORMANCE = /\bperformance\b/i.test(process.title);
-
+if (IS_RELEASE) {
     console.log('IS_PUBLISH    :' + IS_PUBLISH);
     console.log('IS_PERFORMANCE:' + IS_PERFORMANCE);
 }
@@ -103,7 +103,7 @@ fis.config.set('modules.parser.tmpl', 'utc');
 
 
 
-
+/*
 // --------------------------------
 // postpackager插件
 // --------------------------------
@@ -111,24 +111,16 @@ fis.config.set('modules.parser.tmpl', 'utc');
 var ppArr = fis.config.get('modules.postpackager') || [];
 
 
-/\bpublish\b/i.test(process.title) && ppArr.push('vmparse');
-/\bperformance\b/i.test(process.title) && ppArr.push('performance-framework');
+IS_PUBLISH     && ppArr.push('vmparse');
+IS_PERFORMANCE && ppArr.push('performance-framework');
 
 // performance-framework 一定要在 require-framework 之前，因为二者都用到了vm钩子
 ppArr.push('require-framework');
 
 
-
 fis.config.set('modules.postpackager', ppArr);
-
-/**
-fis.config.merge({
-    modules: {
-        postpackager: ppArr
-    }
-});
-**/
-
+// fis.config.merge({ modules: { postpackager: ppArr } });
+*/
 
 
 
@@ -143,7 +135,7 @@ fis.config.merge({
 // 黄页  views/index.vm
 // --------------------------------
 
-if ( /\brelease\b/i.test(process.title) && !/\bpublish\b/i.test(process.title) ) {
+if ( IS_RELEASE && !IS_PUBLISH ) {
     require('./jr8-yellowpage').run();
 }
 
