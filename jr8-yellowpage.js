@@ -67,7 +67,7 @@ function writeIndexVm() {
         return item;
     });
     
-    var str = '<head><meta charset="UTF-8"/></head><style>a{display:block;}p{background-color:#08c;color:#fff;padding:20px;}</style>'
+    var str = '<head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"></head><style>a{display:block;}p{background-color:#08c;color:#fff;padding:20px;}</style>'
               + allItems.join('\n');
     
     
