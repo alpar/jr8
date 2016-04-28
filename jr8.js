@@ -103,7 +103,7 @@ fis.config.set('modules.parser.tmpl', 'utc');
 
 
 
-/*
+
 // --------------------------------
 // postpackager插件
 // --------------------------------
@@ -120,7 +120,7 @@ ppArr.push('require-framework');
 
 fis.config.set('modules.postpackager', ppArr);
 // fis.config.merge({ modules: { postpackager: ppArr } });
-*/
+
 
 
 
