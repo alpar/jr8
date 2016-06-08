@@ -3,17 +3,17 @@ jr8是58金融事业部在百度fis2和jello的基础上封装改造而来，用
 
 
 # 架构流程
-![step1](https://github.com/jiajianrong/MarkdownPhotos/blob/master/steps/step1.png)
-![step2](https://github.com/jiajianrong/MarkdownPhotos/blob/master/steps/step2.png)
-![step2-2](https://github.com/jiajianrong/MarkdownPhotos/blob/master/steps/step2-2.png)
-![step2-3](https://github.com/jiajianrong/MarkdownPhotos/blob/master/steps/step2-3.png)
-![step3](https://github.com/jiajianrong/MarkdownPhotos/blob/master/steps/step3.png)
-![step3-2](https://github.com/jiajianrong/MarkdownPhotos/blob/master/steps/step3-2.png)
-![step4](https://github.com/jiajianrong/MarkdownPhotos/blob/master/steps/step4.png)
-![step5](https://github.com/jiajianrong/MarkdownPhotos/blob/master/steps/step5.png)
-![step5-2](https://github.com/jiajianrong/MarkdownPhotos/blob/master/steps/step5-2.png)
-![step5-3](https://github.com/jiajianrong/MarkdownPhotos/blob/master/steps/step5-3.png)
-![step6](https://github.com/jiajianrong/MarkdownPhotos/blob/master/steps/step6.png)
+![step1](https://raw.githubusercontent.com/jiajianrong/MarkdownPhotos/master/steps/step1.png)
+![step2](https://raw.githubusercontent.com/jiajianrong/MarkdownPhotos/master/steps/step2.png)
+![step2-2](https://raw.githubusercontent.com/jiajianrong/MarkdownPhotos/master/steps/step2-2.png)
+![step2-3](https://raw.githubusercontent.com/jiajianrong/MarkdownPhotos/master/steps/step2-3.png)
+![step3](https://raw.githubusercontent.com/jiajianrong/MarkdownPhotos/master/steps/step3.png)
+![step3-2](https://raw.githubusercontent.com/jiajianrong/MarkdownPhotos/master/steps/step3-2.png)
+![step4](https://raw.githubusercontent.com/jiajianrong/MarkdownPhotos/master/steps/step4.png)
+![step5](https://raw.githubusercontent.com/jiajianrong/MarkdownPhotos/master/steps/step5.png)
+![step5-2](https://raw.githubusercontent.com/jiajianrong/MarkdownPhotos/master/steps/step5-2.png)
+![step5-3](https://raw.githubusercontent.com/jiajianrong/MarkdownPhotos/master/steps/step5-3.png)
+![step6](https://raw.githubusercontent.com/jiajianrong/MarkdownPhotos/master/steps/step6.png)
 
 
 ##使用jr8有如下限制：
