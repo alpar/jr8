@@ -35,10 +35,12 @@ fis.cli.version = function(){
 var IS_RELEASE     = process.argv.indexOf('release') != -1;
 var IS_PUBLISH     = process.argv.indexOf('publish') != -1;
 var IS_PERFORMANCE = process.argv.indexOf('performance') != -1;
+var IS_TRACE       = process.argv.indexOf('trace') != -1;
 
 if (IS_RELEASE) {
     console.log('IS_PUBLISH    :' + IS_PUBLISH);
     console.log('IS_PERFORMANCE:' + IS_PERFORMANCE);
+    console.log('IS_TRACE:'       + IS_TRACE);
 }
 
 
@@ -59,6 +61,11 @@ fis.config.merge({
             // js后缀文件会经过fis-optimizer-uglify-js插件的压缩优化
             js: 'uglify-js',
             css: 'clean-css' //, png : 'png-compressor'
+        },
+        // 2016-6-12 改 fis-parser-sass 为 fis-parser-node-sass
+        parser: {
+            sass: 'node-sass',
+            scss: 'node-sass'
         }
     },
     // 使用pngquant进行压缩，png图片压缩后均为png8
@@ -113,8 +120,9 @@ var ppArr = fis.config.get('modules.postpackager') || [];
 
 IS_PUBLISH     && ppArr.push('vmparse');
 IS_PERFORMANCE && ppArr.push('performance-framework');
+IS_TRACE       && ppArr.push('trace-framework');
 
-// performance-framework 一定要在 require-framework 之前，因为二者都用到了vm钩子
+// performance-framework/trace-framework 一定要在 require-framework 之前，因为都用到了vm钩子
 ppArr.push('require-framework');
 
 

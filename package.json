@@ -1,6 +1,6 @@
 {
   "name": "jr8",
-  "version": "1.13.0",
+  "version": "1.15.0",
   "description": "jinrong.58",
   "main": "jr8.js",
   "bin": {
@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/jiajianrong/jr8#readme",
   "dependencies": {
-    "fis-parser-sass": "^0.3.16",
+    "fis-parser-node-sass": "^0.2.0",
     "fis-parser-utc": "0.0.2",
     "fis-parser-es6-2-es5": "^1.0.0",
     "jello": "^1.0.7",
