@@ -62,11 +62,13 @@ fis.config.merge({
             js: 'uglify-js',
             css: 'clean-css' //, png : 'png-compressor'
         },
-        // 2016-6-12 改 fis-parser-sass 为 fis-parser-node-sass
-        parser: {
-            sass: 'node-sass',
-            scss: 'node-sass'
-        }
+        // 2016-6-12 为支持linux，改 fis-parser-sass 为 fis-parser-node-sass
+        // parser: {
+        //     sass: 'node-sass',
+        //     scss: 'node-sass'
+        // }
+        // 2016-6-13 改回fis-parser-sass，因为windows安装fis-parser-node-sass报错
+        // Linux系统请取消上面注释，使用node-sass
     },
     // 使用pngquant进行压缩，png图片压缩后均为png8
     // fis.config.set('settings.optimizer.png-compressor.type', 'pngquant');
