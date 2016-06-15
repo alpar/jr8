@@ -139,19 +139,14 @@ fis.config.set('modules.postpackager', ppArr);
 
 
 
+// --------------------------------
+// postprocessor插件
+// --------------------------------
 
-
-IS_TRACE       &&  fis.config.merge( {
+IS_TRACE && fis.config.merge( {
     modules: {
         postprocessor: {
-            vm:  'framework-trace'  //function(c,f){console.log(f.id);return c;}
-        }
-    }
-    settings : {
-        postprocessor : {
-            'framework-trace' : {
-                
-            }
+            vm:  'framework-trace'
         }
     }
 });
