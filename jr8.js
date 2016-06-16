@@ -122,9 +122,9 @@ var ppArr = fis.config.get('modules.postpackager') || [];
 
 IS_PUBLISH     && ppArr.push('vmparse');
 IS_PERFORMANCE && ppArr.push('performance-framework');
-// IS_TRACE       && ppArr.push('trace-framework');
+IS_TRACE       && ppArr.push('framework-trace');
 
-// performance-framework/trace-framework 一定要在 require-framework 之前，因为都用到了vm钩子
+// performance/trace 一定要在 require 之前，因为都用到了vm钩子
 ppArr.push('require-framework');
 
 
@@ -132,24 +132,6 @@ fis.config.set('modules.postpackager', ppArr);
 // fis.config.merge({ modules: { postpackager: ppArr } });
 
 
-
-
-
-
-
-
-
-// --------------------------------
-// postprocessor插件
-// --------------------------------
-
-IS_TRACE && fis.config.merge( {
-    modules: {
-        postprocessor: {
-            vm:  'framework-trace'
-        }
-    }
-});
 
 
 
