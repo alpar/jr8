@@ -7,7 +7,7 @@ fis.cli.info = fis.util.readJSON(__dirname + '/package.json');
 fis.cli.version = function(){
     var content = [
         '',
-        '  fis: v' + fis.cli.info.version,
+        '  jr8: v' + fis.cli.info.version,
         '',
         ' ________'                    + '|||'.bold.red + '____' + '|||||||||\\'.bold.yellow                                + '___________' + '||||||||||'.bold.green        + '____' + '||||||||||'.bold.blue,
         ' ________'                    + '|||'.bold.red + '____' + '|||'.bold.yellow + '______' + '||'.bold.yellow          + '__________' + '|||'.bold.green         + '___________' + '|||'.bold.blue + '____' + '|||'.bold.blue,
@@ -34,12 +34,10 @@ fis.cli.version = function(){
 // --------------------------------
 var IS_RELEASE     = process.argv.indexOf('release') != -1;
 var IS_PUBLISH     = process.argv.indexOf('publish') != -1;
-var IS_PERFORMANCE = process.argv.indexOf('performance') != -1;
 var IS_TRACE       = process.argv.indexOf('trace') != -1;
 
 if (IS_RELEASE) {
     console.log('IS_PUBLISH    :' + IS_PUBLISH);
-    console.log('IS_PERFORMANCE:' + IS_PERFORMANCE);
     console.log('IS_TRACE:'       + IS_TRACE);
 }
 
@@ -121,10 +119,9 @@ var ppArr = fis.config.get('modules.postpackager') || [];
 
 
 IS_PUBLISH     && ppArr.push('vmparse');
-IS_PERFORMANCE && ppArr.push('performance-framework');
 IS_TRACE       && ppArr.push('framework-trace');
 
-// performance/trace 一定要在 require 之前，因为都用到了vm钩子
+// trace 一定要在 require 之前，因为都用到了vm钩子
 ppArr.push('require-framework');
 
 

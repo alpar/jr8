@@ -79,10 +79,6 @@ jr8是58金融事业部在百度fis2和jello的基础上封装改造而来，用
 - 业务页面无需引入业务JS、CSS文件，jr8框架自动加载依赖并优化合并页面所需资源。开发人员再也不用担心性能优化的问题了
 
 
-- 页面加载及渲染性能统计(一个参数搞定：performance)
-
-  `jr8 release -cw performance`
-
 - 页面打点统计(一个参数搞定：trace)
 
   `jr8 release -cw trace`
