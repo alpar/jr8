@@ -1,6 +1,6 @@
 {
   "name": "jr8",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "jr8 工程化框架",
   "main": "jr8.js",
   "bin": {
@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/jiajianrong/jr8#readme",
   "dependencies": {
-    "fis-parser-sass": "^0.3.16",
+    "fis-parser-node-sass": "^0.2.0",
     "fis-parser-utc": "0.0.2",
     "fis-parser-es6-2-es5": "^1.0.0",
     "fis-postpackager-framework-trace": "^1.0.0",
