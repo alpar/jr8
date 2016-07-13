@@ -75,6 +75,11 @@ fis.config.merge({
             'png-compressor': {
                 type: 'pngquant'
             }
+        },
+        postpackager: {
+            'framework-trace': {
+                traceModId: 'libs/core.trace'
+            }
         }
     }
 });
