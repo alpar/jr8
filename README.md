@@ -90,7 +90,8 @@ jr8是58金融事业部在百度fis2和jello的基础上封装改造而来，用
 ##安装jr8
 
 - 安装nodejs
-> *推荐安装node-v0.12.x*
+> *推荐安装node-v4*
+> *v0.12及以下不支持node-sass；v6不支持的更多*
 
 - 安装jr8：  npm install -g jr8
 > *如果网速慢的话也可以使用国内npm代理安装jr8：  npm --registry http://registry.cnpmjs.org install -g  jr8*
