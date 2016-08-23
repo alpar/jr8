@@ -1,3 +1,14 @@
+/**
+ IMPORTANT:  
+ 
+ modules.parser        { sass:node-sass, scss:node-sass, less:less, js:ES5-2-ES6, tmpl:utc } 
+ modules.postprocessor { js:jswrapper }
+ modules.postpackager  [ vmparse, framework-trace, require-framework ]
+ 
+ have been defined.
+ Please merge them via fis.config.get('modules...').push() if needed.
+**/
+
 var fis = module.exports = require('jello');
 
 fis.require.prefixes.unshift('jello');
@@ -63,7 +74,14 @@ fis.config.merge({
         // 2016-6-12 为支持linux，改 fis-parser-sass 为 fis-parser-node-sass
         parser: {
             sass: 'node-sass',
-            scss: 'node-sass'
+            scss: 'node-sass',
+            // 2016-8-23 支持less和ES6
+            less: 'less',
+            js:   'es6-2-es5'
+        },
+        postprocessor: {
+            // 2016-8-23 ES6需要wrapper
+            js: ['jswrapper']
         }
         // 2016-6-13 改回fis-parser-sass，因为windows安装fis-parser-node-sass报错
         // Linux系统请取消上面注释，使用node-sass
@@ -120,21 +138,15 @@ fis.config.set('modules.parser.tmpl', 'utc');
 // postpackager插件
 // --------------------------------
 
-var ppArr = fis.config.get('modules.postpackager') || [];
-
-
-IS_PUBLISH     && ppArr.push('vmparse');
-IS_TRACE       && ppArr.push('framework-trace');
-
 // trace 一定要在 require 之前，因为都用到了vm钩子
-ppArr.push('require-framework');
+var ppArr = ['require-framework']; 
+// fis.config.get('modules.postpackager') || []
 
+IS_TRACE       && ppArr.unshift('framework-trace');
+IS_PUBLISH     && ppArr.unshift('vmparse');
 
 fis.config.set('modules.postpackager', ppArr);
 // fis.config.merge({ modules: { postpackager: ppArr } });
-
-
-
 
 
 
@@ -152,4 +164,7 @@ fis.config.set('modules.postpackager', ppArr);
 if ( IS_RELEASE && !IS_PUBLISH ) {
     require('./jr8-yellowpage').run();
 }
+
+
+
 
