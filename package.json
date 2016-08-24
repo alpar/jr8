@@ -1,6 +1,6 @@
 {
   "name": "jr8",
-  "version": "3.1.0",
+  "version": "3.2.0",
   "description": "jr8 工程化框架",
   "main": "jr8.js",
   "bin": {
@@ -26,7 +26,7 @@
   "dependencies": {
     "fis-parser-node-sass": "^0.2.1",
     "fis-parser-utc": "0.0.2",
-    "fis-parser-es6-2-es5": "^1.0.0",
+    "fis-parser-es6-2-es5": "^2.0.0",
     "fis-postprocessor-jswrapper": "^0.0.14",
     "fis-postpackager-framework-trace": "^1.1.1",
     "jello": "^1.0.7",

@@ -78,11 +78,15 @@ fis.config.merge({
             // 2016-8-23 支持less和ES6
             less: 'less',
             js:   'es6-2-es5'
-        },
-        postprocessor: {
-            // 2016-8-23 ES6需要wrapper
-            js: ['jswrapper']
         }
+        // 2016-8-24 移除fis-postprocessor-jswrapper
+        // 因为jello默认会给page目录下的所有js文件设置isMod=true
+        // 会导致已注释开头的js文件多包含一层define
+        //postprocessor: {
+            // 2016-8-23 ES6需要wrapper
+            // js: ['jswrapper']
+        //}
+        
         // 2016-6-13 改回fis-parser-sass，因为windows安装fis-parser-node-sass报错
         // Linux系统请取消上面注释，使用node-sass
     },
