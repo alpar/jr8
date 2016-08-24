@@ -1,8 +1,8 @@
 /**
  IMPORTANT:  
  
- modules.parser        { sass:node-sass, scss:node-sass, less:less, js:ES5-2-ES6, tmpl:utc } 
- modules.postprocessor { js:jswrapper }
+ modules.parser        { sass:node-sass, scss:node-sass, less:less, js:[ES5-2-ES6], tmpl:utc } 
+ modules.postprocessor { js:[] }
  modules.postpackager  [ vmparse, framework-trace, require-framework ]
  
  have been defined.
@@ -40,16 +40,16 @@ fis.cli.version = function(){
 
 
 
-// --------------------------------
+// ---------------
 // 打印信息
-// --------------------------------
+// ---------------
 var IS_RELEASE     = process.argv.indexOf('release') != -1;
 var IS_PUBLISH     = process.argv.indexOf('publish') != -1;
 var IS_TRACE       = process.argv.indexOf('trace') != -1;
 
 if (IS_RELEASE) {
-    console.log('IS_PUBLISH    :' + IS_PUBLISH);
-    console.log('IS_TRACE:'       + IS_TRACE);
+    console.log('IS_PUBLISH :' + IS_PUBLISH);
+    console.log('IS_TRACE   :' + IS_TRACE);
 }
 
 
@@ -59,11 +59,9 @@ if (IS_RELEASE) {
 
 
 
-
-
-// --------------------------------
-// 压缩优化
-// --------------------------------
+// ---------------
+// 标准过程流
+// ---------------
 fis.config.merge({
     modules: {
         optimizer: {
@@ -77,15 +75,19 @@ fis.config.merge({
             scss: 'node-sass',
             // 2016-8-23 支持less和ES6
             less: 'less',
-            js:   'es6-2-es5'
-        }
+            tmpl: 'utc',
+            js:   ['es6-2-es5']
+        },
         // 2016-8-24 移除fis-postprocessor-jswrapper
         // 因为jello默认会给page目录下的所有js文件设置isMod=true
         // 会导致已注释开头的js文件多包含一层define
-        //postprocessor: {
+        // 重写postprocessor为[]，否则为string : jswrapper, require-async
+        postprocessor: {
             // 2016-8-23 ES6需要wrapper
-            // js: ['jswrapper']
-        //}
+            js: [],
+            vm: [],
+            jsp: []
+        }
         
         // 2016-6-13 改回fis-parser-sass，因为windows安装fis-parser-node-sass报错
         // Linux系统请取消上面注释，使用node-sass
@@ -103,6 +105,10 @@ fis.config.merge({
                 traceModId: 'libs/core.trace'
             }
         }
+        //，
+        //parser : { 
+        //  'utc': { variable: 'obj' } 
+        //}
     }
 });
 
@@ -114,33 +120,13 @@ fis.config.merge({
 
 
 
-// --------------------------------
-// js 模板支持
-// --------------------------------
-fis.config.set('modules.parser.tmpl', 'utc');
-//fis.config.set('roadmap.ext.tmpl', 'js');
-//fis.config.set('roadmap.ext.tpl', 'js');
-//fis.config.merge({
-//  settings: {
-//      parser : {
-//          'utc': {
-//              variable: 'obj'
-//          }
-//      }
-//  }
-//});
 
 
 
 
-
-
-
-
-
-// --------------------------------
+// ---------------
 // postpackager插件
-// --------------------------------
+// ---------------
 
 // trace 一定要在 require 之前，因为都用到了vm钩子
 var ppArr = ['require-framework']; 
@@ -161,12 +147,39 @@ fis.config.set('modules.postpackager', ppArr);
 
 
 
-// --------------------------------
+// ---------------
 // 黄页  views/index.vm
-// --------------------------------
+// ---------------
 
 if ( IS_RELEASE && !IS_PUBLISH ) {
     require('./jr8-yellowpage').run();
+}
+
+
+
+
+
+
+
+
+// ---------------
+// 打印信息
+// ---------------
+if ( IS_RELEASE ) {
+    console.log('Below plugins have been provided in jr8:');
+    console.log('--');
+    console.log('parser');
+    
+    delete fis.config.get('modules.parser')['po'];
+    console.log(fis.config.get('modules.parser'));
+    console.log('--');
+    console.log('postprocessor');
+    console.log(fis.config.get('modules.postprocessor'));
+    console.log('--');
+    console.log('postpacker');
+    console.log(fis.config.get('modules.postpackager'));
+    
+    //console.log( fis.config.get('settings') );
 }
 
 
