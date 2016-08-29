@@ -1,7 +1,7 @@
 /**
  IMPORTANT:  
  
- modules.parser        { sass:node-sass, scss:node-sass, less:less, js:[ES5-2-ES6], tmpl:utc } 
+ modules.parser        { sass:node-sass, scss:node-sass, less:less, es6:[es5-2-es6], tmpl:utc }
  modules.postprocessor { js:[] }
  modules.postpackager  [ vmparse, framework-trace, require-framework ]
  
@@ -76,7 +76,7 @@ fis.config.merge({
             // 2016-8-23 支持less和ES6
             less: 'less',
             tmpl: 'utc',
-            js:   ['es6-2-es5']
+            es6:  ['es6-2-es5']
         },
         // 2016-8-24 移除fis-postprocessor-jswrapper
         // 因为jello默认会给page目录下的所有js文件设置isMod=true
@@ -105,15 +105,20 @@ fis.config.merge({
                 traceModId: 'libs/core.trace'
             }
         }
-        //，
+        //,
+        //project: {
+        //  fileType: { text: 'es6' }
+        //}
+        //,
         //parser : { 
         //  'utc': { variable: 'obj' } 
         //}
     }
+    
 });
 
 
-
+//fis.config.set('project.fileType.text','es6');
 
 
 
